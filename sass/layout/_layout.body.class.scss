@@ -1,0 +1,591 @@
+@import '../layout/layout.config';
+@import '../mixin/mixin.mediaquery';
+@import '../mixin/mixin.flexbox';
+@import '../mixin/mixin.transform';
+
+body.dark {
+    [data-overlay]:before {background: $color-third;}
+    [data-overlay="9"]:before {opacity: 0.9;}
+    [data-overlay="8"]:before {opacity: 0.8;}
+    [data-overlay="7"]:before {opacity: 0.7;}
+    [data-overlay="6"]:before {opacity: 0.6;}
+
+    .toggle {
+        top: 34px;
+    }    
+        
+    .menucr {
+    background-color: rgba(0,0,0,0.97); 
+        ul {
+            li {
+                border-color: #1c1c1c;
+                a {
+                    color: #777;
+                    font-size: $size-ssm;
+                }
+            }
+        }
+    }
+    
+    header {
+        background: none;
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            @include tablet {
+                display: none;
+            } 
+        
+            ul {
+                li { 
+                    a {
+                        color: #777;
+                        font-weight: bold;
+                        border-radius: $radius;
+                        border:none;
+                        padding: .5rem;
+                        font-size: $size-ssm;
+                        transition: 0.35s;
+                        background: none;
+                        &:hover {
+                            background: #3d3d3d;
+                            color: white;
+                        }
+                    }
+                }
+                
+                &.user {
+                    li {
+                        a {
+                            color: $color-primary;
+                            border: none;
+                            background: $color-third;
+                            
+                            &:hover {
+                                background: $color-primary;
+                                color: white;
+                                border: none;
+                            }
+                        
+                            &.apps {
+                                border: none;
+                                i {
+                                    filter: grayscale(0);
+                                    opacity: 1;
+                                }
+                            &:hover {
+                                border: none;
+                                box-shadow: $shadow-sm;
+
+                                background: black;
+                                i {
+                                    opacity: 1;
+                                    filter: grayscale(0);
+                                }
+                            }
+                            }                         
+                        }
+                    }
+                }
+            }
+        }          
+    }
+ 
+    .logo {
+        background: url(../images/logo-w.svg);  
+        @include tablet {
+            margin-left: 0;
+            margin: 12px auto;
+        }
+    }
+
+
+    section.intro {
+        &._05 {
+            background: url(../images/banner-04.jpg) no-repeat right top; 
+            background-size: cover;
+        }
+        
+        @include tablet {
+           padding-top: 132px;
+            text-align: center;
+        }          
+        
+        .comp-wrap {
+            filter: grayscale(0);
+        }
+        
+        h1 { 
+            color: white;
+        }
+        
+        p {
+            color: white;
+        }
+        
+        h2 {
+            color: white;
+            opacity: 0.7;
+        }
+    }
+    
+    
+    section.otro._05 {
+        transition: 0s;
+        background: url(../images/banner-02.jpg) no-repeat right top; 
+        background-size: cover;
+    }
+    
+    section.otro {
+        .smarthvideo img {
+            filter: invert(1);
+        }
+
+        .leftText {
+            
+            .hcero {
+                color: white;
+            }
+            
+            h1 {
+                color: white;
+                    &._btn {
+                        color: orange;
+                    }
+                    &._sol {
+                        color: indigo;
+                    }
+                    &._eth {
+                        color: #37367b;
+                    }        
+                    &._ada {
+                        color: blue;
+                    }  
+                     &._bnb {
+                        color: #FCD535;
+                    } 
+
+                    &._crip {
+                        color: $color-primary;
+                    }
+                }
+            
+            h2 {
+                color: white;
+            }
+        }
+   
+    }
+
+    footer {
+        text-align: center;
+        .logo {
+            background: url(../images/logo-w.svg); 
+            margin: $margin auto;
+        }
+    }
+    
+    &.fix {
+           header.fixed {
+               nav {
+                ul {
+                    li { 
+                        a {
+                            color: #777;
+                            font-weight: bold;
+                            border-radius: $radius;
+                            border:none;
+                            padding: .5rem;
+                            font-size: $size-ssm;
+                            transition: 0.35s;
+                            background: none;
+                            &:hover {
+                                background: #3d3d3d;
+                                color: white;
+                            }
+                        }
+                    }
+                    &.user {
+                        li {
+                            a {
+                                color: white;
+                                border: none;
+                                background: $color-primary;
+                                
+                                &:hover {
+                                    background: $color-primary;
+                                    color: white;
+                                    border: none;
+                                }
+
+                                &.apps {
+                                    border: none;
+                                    padding: 0.2rem;
+                                    background: white;
+                                    i {
+                                        filter: grayscale(0);
+                                        opacity: 1;
+                                    }
+                                   &:hover {
+                                       border: none;
+                                       box-shadow: $shadow-sm;
+
+                                       background: black;
+                                       i {
+                                           opacity: 1;
+                                           filter: grayscale(0);
+                                       }
+                                   }
+                                }                         
+                            }
+                        }
+                    }
+                 }
+            }          
+        }
+        
+        .logo {
+            background: url(../images/logo.svg);  
+        }
+        
+        footer {
+            .logo {
+                background: url(../images/logo.svg); 
+            }
+        }        
+    }
+    
+    &.fix.light-theme {
+            footer {
+                background: url(../images/back-svg.svg) no-repeat bottom;
+                background-size: cover;
+                background-color: black;
+            .logo {
+                background: url(../images/logo-w.svg); 
+            }
+        }  
+    }
+    
+    &.light-theme {
+        header {
+            nav {
+                ul {
+                    li {
+                        a {
+                            border: 1px solid #ccc;
+                            color: white;
+                        }
+                    }
+                    &.user {
+                        li {
+                            a {
+                                border: 1px solid black;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+body.alt {
+    
+    .toggle {
+        display: none;
+        
+        @include tablet {
+            //top: 41px; 
+            display: block;
+        }
+    }
+    
+    .toggle.is-active {
+        top: 28px;
+    }
+    
+    header {
+        height: 90px;
+        .logo {
+            min-width: 172px;
+            max-width: 172px;
+            min-height: 61px;
+            max-height: 61px;
+            margin-top: 8px;
+            @include tablet {
+                margin-left: 0;
+                margin: auto;
+            }
+        } 
+        @include tablet {
+            height: 70px;
+        }
+    }
+    
+    .security {
+        background: none;
+        padding: 48px 0 132px 0;
+        @include tablet {
+            padding: $margin;
+        }
+    }
+    
+    .menucr {
+        .logo {
+            min-width: 172px;
+            max-width: 172px;
+            min-height: 61px;
+            max-height: 61px;
+            margin-top: 4px;
+            margin-left: 0;
+        }
+    }
+}
+
+body.fix {
+    header {
+        &.fixed {
+            .logo {
+                margin-top: 0px;
+                @include mobile {
+                    margin-top:10px;
+                }
+            }
+        }
+    }
+}
+
+.theme-switch {
+    position: fixed;
+    right: 34px;
+    top: 34px;
+    --text: #000;
+    color: var(--text);
+    width: 40px;
+    height: 14px;
+    background:#ccc;
+    border-radius: 40px;
+    
+    @include mobile {
+        display: none;
+    }
+    
+    &:after {
+        position: absolute;
+        content: "";
+        width: 20px;
+        height: 20px;
+        background: url(../images/icos/ico-sun.svg) no-repeat;
+        filter: grayscale(1);
+        left: -24px;
+        top: -3px;
+        z-index: 1;
+        opacity: 0;
+        transition: 0.35s;
+    }
+    
+    &:before {
+        position: absolute;
+        content: "";
+        width: 20px;
+        height: 20px;
+        background: url(../images/icos/ico-moon.svg) no-repeat;
+        filter: grayscale(1) invert(1);
+        right: -24px;
+        top: -3px;
+        z-index: 1;
+        transition: 0.35s;
+    }
+    
+    .switch {
+        background: white;
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+        position: absolute;
+        top: -3px;
+        left: 0px;
+        box-shadow: 0 1px 4px 0 rgba(35, 35, 35,  .16);
+        transition: 0.15s all ease;
+        z-index: 2;
+    }
+}
+
+.light-theme {
+  --background: #f2f2f2;
+  background: var(--background);
+
+  .theme-switch {
+    background: #11151c;
+      &:after {
+          opacity: 1;
+          filter: grayscale(1)invert(1);
+      }
+      &:before {
+          opacity: 0;
+      }
+    .switch {
+      transform: translateX(22px);
+        background: #373e46;
+        box-shadow: 0 1px 4px 0 rgba(35, 35, 35,  .36);
+    }
+  }
+  a { }
+}
+
+
+
+body.last {
+    [data-overlay]:before {background: $color-third;}
+    [data-overlay="9"]:before {opacity: 0.9;}
+    [data-overlay="8"]:before {opacity: 0.8;}
+    [data-overlay="7"]:before {opacity: 0.7;}
+    [data-overlay="6"]:before {opacity: 0.6;}
+    header {
+        background: none;
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            @include tablet {
+                display: none;
+            } 
+        
+            ul {
+                li { 
+                    a {
+                        color: #777;
+                        font-weight: bold;
+                        border-radius: $radius;
+                        border:none;
+                        padding: .5rem;
+                        font-size: $size-ssm;
+                        transition: 0.35s;
+                        background: #3d3d3d;
+                        color: white;
+                        &:hover {
+                            background:$color-primary-alt;
+                            color: white;
+                        }
+                    }
+                }
+                
+                &.user {
+                    li {
+                        a {
+                            background: $color-primary;
+                            color: white;
+                            border: none;
+                            
+                            &:hover {
+                                background:$color-primary-alt;
+                                color: white;
+                                border: none;
+                            }
+                        
+                            &.apps {
+                                border: none;
+                                i {
+                                    filter: grayscale(0);
+                                    opacity: 1;
+                                }
+                            &:hover {
+                                border: none;
+                                box-shadow: $shadow-sm;
+
+                                background: black;
+                                i {
+                                    opacity: 1;
+                                    filter: grayscale(0);
+                                }
+                            }
+                            }                         
+                        }
+                    }
+                }
+            }
+        }          
+    }
+ 
+    .logo {
+        background: url(../images/logo-w.svg);  
+        @include tablet {
+            margin-left: 0;
+            margin: 12px auto;
+        }
+    }
+
+    section.otro {
+
+        h2 {
+            color: white;
+        }
+
+        .leftText {
+            
+        .hcero {
+            color: white;
+        }
+
+        h1 {
+            color: white;
+                &._btn {
+                    color: orange;
+                }
+                &._sol {
+                    color: indigo;
+                }
+                &._eth {
+                    color: #37367b;
+                }        
+                &._ada {
+                    color: blue;
+                }  
+                    &._bnb {
+                    color: #FCD535;
+                } 
+
+                &._crip {
+                    color: $color-primary;
+                }
+            }
+
+        h2 {
+            color: white;
+        }
+        }
+    }
+
+
+}
+
+//this change
+
+
+body.dark.light-theme .callto {
+    padding: 0;
+    margin: 0;
+    margin-top: 0;
+    
+    @include laptop {
+        padding: 60px ;
+    }
+    
+    .elemento {
+        background: url(../images/banner-05.jpg) no-repeat;
+        background-size: cover;
+        padding: 100px;
+        text-align: left;
+        border-radius: 0;
+        p {
+            color: #777;
+        }
+        @include laptop {
+            padding: 48px $margin;
+            background: url(../images/banner-05.jpg) no-repeat;
+        } 
+    } 
+}
+
+

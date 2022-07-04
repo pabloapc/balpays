@@ -1,0 +1,183 @@
+@import 'mixin/mixin.mediaquery';
+@import 'mixin/mixin.transform';
+@import 'layout/layout.config';
+
+//@import 'layot/layout.menu';
+
+header {
+    width: 100%;
+	//background:rgba(223, 164, 0, .89);
+    position: absolute;
+    padding: 0 $margin-m ;
+    z-index: 2; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.35s;  
+    &.center {
+        justify-content: center;
+    }
+    
+    &.justify-content-around {
+        justify-content: space-around;
+    }
+    
+    &.fixed {
+        position: fixed;
+        top: 0;
+        backdrop-filter: blur(10px);
+        background-color: hsla(0,0%,100%,.7);
+        height: 92px;
+        z-index: 9;
+        //box-shadow: 0 2px 20px 2px rgba(60,64,67 , 0.15);
+        box-shadow: $shadow-sm;
+        
+        .logo {
+            background: url(../images/logo.svg);
+            //margin-top: 0;
+
+
+            &.white {
+              background: url(../images/logo-w.svg);  
+            }
+
+ 
+        }
+    }   
+    
+    
+    &.shadow {
+    //@include box-shadow(  1px ,  1px ,  1px ,  0px ,  rgba(0, 0, 0, 0.21)); 
+    //box-shadow: 0 1px 2px 0 rgba(60,64,67 , 0.3), 0 2px 6px 2px rgba(60,64,67 , 0.15);
+    box-shadow: $shadow-sm;    
+    }
+    
+    
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-right: 96px;
+        @include tablet {
+            display: none;
+        }
+        
+        ul {
+            display: flex;
+            align-items: center;
+            margin: 0 ;
+            padding: 0;
+
+            li { 
+                margin: 0 6px;
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                a {
+                     background: white;
+                    color: $color-primary;
+                    border-radius: $radius;
+                    border: 1px solid $color-primary;
+                    padding: .5rem;
+                    font-size: $size-ssm;
+                    transition: 0.35s;
+                    &:hover {
+                        background: $color-primary;
+                        color: white;
+                    }
+
+                }
+            }
+            
+            &.user {
+                
+                li {
+                    
+                    a {
+                        color: $color-text;
+                        border: 1px solid $color-text;
+                        
+                        &:hover {
+                            background: $color-text;
+                             color: white;
+                        }
+                        
+                       &.apps {
+                            border: 2px solid white;
+                            display: flex;
+                            justify-content: space-around;
+                            padding: .2rem;
+                            box-shadow: $shadow-sm;
+                            i {
+                                min-width: 24px;
+                                min-height: 24px;
+                                filter: grayscale(1);
+                                opacity: .6;
+                                &.ios {
+                                  background: url(../images/app-store.svg) no-repeat;   
+                                }
+                                &.android {
+                                  background: url(../images/play-store.svg) no-repeat;   
+                                }                                
+                            }
+                           &:hover {
+                               border: 2px solid white;
+                               box-shadow: $shadow;
+
+                               background: white;
+                               i {
+                                   opacity: 1;
+                                   filter: grayscale(0);
+                               }
+                           }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+.logo {
+    background: url(../images/logo.svg);
+    //min-width: 172px;
+    //max-width: 172px;
+    //min-height: 61px;
+    //max-height: 61px;
+    
+    min-width: 202px;
+    max-width: 202px;
+    min-height: 72px;
+    max-height: 72px;
+    
+    margin-left: 72px;
+    margin-top: 10px;
+    &.white {
+      background: url(../images/logo-w.svg);  
+    }
+    
+    &.var {
+        background: url(../images/logo-var.svg);
+        min-width: 172px;
+        max-width: 172px;
+        min-height: 61px;
+        max-height: 61px;
+        margin-top: 12px;
+ 
+        &.white {
+          background: url(../images/logo-var-w.svg);  
+        }
+    }    
+    
+    @include mobile {
+         //@include scale(0.77);
+        //margin-left: -20px;
+        margin:12px auto;
+    } 
+    
+
+}
+
